@@ -10,6 +10,8 @@ resource "aws_instance" "web" {
   }
 }
 resource "aws_eip" "ansible_server_ip" {
+  #count = 5
+  #instance = aws_instance.web[count.index].id
     instance = aws_instance.web.id
     vpc      = true
 }
