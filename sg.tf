@@ -1,14 +1,14 @@
 resource "aws_security_group" "ansible_server" {
   name        = "ansible-server"
   description = "Allow connection for ansible inbound traffic"
-  vpc_id      = data.aws_vpc.talent-academy.id
+  vpc_id      = data.aws_vpc.lab_vpc.id
 
   ingress {
     description      = "allow port 80"
     from_port        = 80
     to_port          = 80
     protocol         = "tcp"
-    cidr_blocks      = ["152.57.240.70/32"]
+    cidr_blocks      = ["0.0.0.0/0"]
   }
 
   ingress {
@@ -16,7 +16,7 @@ resource "aws_security_group" "ansible_server" {
     from_port        = 22
     to_port          = 22
     protocol         = "tcp"
-    cidr_blocks      = ["152.57.240.70/32"]
+    cidr_blocks      = ["0.0.0.0/0"]
   }
 
   egress {
