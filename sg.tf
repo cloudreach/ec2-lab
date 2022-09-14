@@ -1,7 +1,7 @@
 resource "aws_security_group" "ansible_server" {
   name        = "ansible-server"
   description = "Allow connection for ansible inbound traffic"
-  vpc_id      = data.aws_vpc.lab_vpc.id
+  vpc_id      = data.aws_vpc.talent-academy.id
 
   ingress {
     description      = "allow port 80"
